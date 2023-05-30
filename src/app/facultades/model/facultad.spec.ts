@@ -1,6 +1,6 @@
 import { Facultad } from './facultad';
 
-describe('Vehiculo', () => {
+describe('Faucultad', () => {
   it('should create an instance', () => {
     expect(new Facultad()).toBeTruthy();
   });

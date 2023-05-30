@@ -1,16 +1,27 @@
-<table class="table">
-  <thead class="table-dark">
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Nombre</th>
-   </tr>
-   </thead>
-   <tbody>
-   <ng-container *ngFor="let facultad of facultades">
-   <tr>
-     <th scope="row">{{facultad.id}}</th>
-     <th scope="row">{{facultad.nombre}}</th>
-  </tr>
-  </ng-container>
-  </tbody>
-</table>
+<div class="container-fluid max-width-900">
+  <div *ngIf="selected" class="row row-cols-1">
+    <div>
+      <app-detail-plan [facultad]="facultadSelected"></app-detail-plan>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead class="table-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NOMBRE</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let facultad of facultades" >
+      <tr (click)="onSelected(facultad)">
+        <th scope="row">{{facultad.id}}</th>
+        <td>{{facultad.nombre}}</td>
+
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>

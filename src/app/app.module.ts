@@ -10,6 +10,7 @@ import {FacultadesService} from "./facultades/service/facultades.service";
 import {CommonModule} from "@angular/common";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
+import {AddsFacultadesModule} from "../../../facultad-app/src/app/AddsFacultad/AddsFacultades";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
         BrowserModule,
         FacultadesModule,
         CommonModule,
+        AddsFacultadesModule,
         HttpClientModule,
         AppRoutingModule
 
