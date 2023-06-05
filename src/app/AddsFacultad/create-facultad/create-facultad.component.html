@@ -1,0 +1,26 @@
+
+<!-- Estamos indicando que este formGroup (grupo de formulario) esta enlazado a paisForm -->
+<!-- El ngSubmit indica que ocurre si se da clic en submit: debe ocurrir si los datos de paisForm no son invalidos y ademas debe crear el pais -->
+<form [formGroup]="facultadForm" (ngSubmit)="!facultadForm.invalid && createFacultad(facultadForm.value)">
+
+  <!-- Esta clase sirve para envolver el formulario para darle estilos -->
+  <div class="form-group">
+
+    <!-- El for="nombre" le dice al label que es una etiqueta del input con id="nombre" -->
+    <label for="nombre">Nombre de la facultad</label>
+
+    <!-- El formControlName le pone nombre a este input para que sea reconocido como un atributo de la clase Pais, debe tener el mismo nombre que tiene en la clase Pais -->
+    <!-- El for="nombre" le dice al label que es una etiqueta del input con id="nombre" -->
+    <!-- El atributo "aria-describedby" se asocia a un elemento para referenciar un elemento secundario que contiene la descripción o información adicional. -->
+    <input type="text" class="form-control" formControlName="nombre"  id="nombre" aria-describedby="facultadHelp" placeholder="Ingrese el nombre de la facultad">
+
+    <!-- Este elemento tiene informacion del input. Esto permite que por ejemplo lectores de pantalla, proporcionen una descripción más completa del elemento.-->
+    <small id="facultadHelp" class="form-text text-muted">Escriba el nombre de la facultad.</small>
+  </div>
+
+  <!-- el valid de paisForm se usa para indicar si los campos del formulario cumplen con la validacion, si no es asi deshabilita el boton -->
+  <button type="submit" class="btn btn-primary" [disabled]="!facultadForm.valid" >  Crear  </button>
+
+  <!-- Si se presiona este boton se ejecuta el metodo cancelCreation -->
+  <button type="button" class="btn btn-danger ml-3" (click)="cancelCreation()" > Cancelar </button>
+</form>
