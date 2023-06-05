@@ -98,6 +98,97 @@
           }
         }
       }
+    },
+    "create-facultad": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/create-facultad",
+      "sourceRoot": "projects/create-facultad/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/create-facultad",
+            "index": "projects/create-facultad/src/index.html",
+            "main": "projects/create-facultad/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/create-facultad/tsconfig.app.json",
+            "assets": [
+              "projects/create-facultad/src/favicon.ico",
+              "projects/create-facultad/src/assets"
+            ],
+            "styles": [
+              "projects/create-facultad/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "create-facultad:build:production"
+            },
+            "development": {
+              "browserTarget": "create-facultad:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "create-facultad:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/create-facultad/tsconfig.spec.json",
+            "assets": [
+              "projects/create-facultad/src/favicon.ico",
+              "projects/create-facultad/src/assets"
+            ],
+            "styles": [
+              "projects/create-facultad/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "cli": {
