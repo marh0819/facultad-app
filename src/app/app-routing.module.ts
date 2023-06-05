@@ -6,11 +6,11 @@ import {CreateFacultadComponent} from "./AddsFacultad/create-facultad/create-fac
 
 const routes: Routes = [
   {
-    path: 'facultades',
+    path: '',
     component: ListFacultadesComponent
   },
   {
-    path: '',
+    path: 'crear',
     component: CreateFacultadComponent
   }
 ]
