@@ -9,15 +9,22 @@ import {FacultadesModule} from "./facultades/facultades.module";
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+//Componentes
 import { CreateFacultadComponent } from './AddsFacultad/create-facultad/create-facultad.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchFacultadesComponent } from './search-facultad/search-facultades.component';
+//Angular-material
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CreateFacultadComponent
+    CreateFacultadComponent,
+    SearchFacultadesComponent
   ],
     imports: [
       BrowserModule,
@@ -25,7 +32,11 @@ import { CreateFacultadComponent } from './AddsFacultad/create-facultad/create-f
       CommonModule,
       HttpClientModule,
       AppRoutingModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      BrowserAnimationsModule,
+      MatFormFieldModule,
+      MatInputModule,
+      FormsModule
     ],
   providers: [FacultadesService],
   bootstrap: [AppComponent]

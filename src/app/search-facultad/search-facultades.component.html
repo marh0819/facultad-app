@@ -1,0 +1,18 @@
+<div class="container-fluid max-width-900">
+  <div *ngIf="selected" class="row row-cols-1">
+    <div>
+      <app-search-facultades ></app-search-facultades>
+    </div>
+  </div>
+
+  <form class="example-form" style="text-align: center">
+    <mat-form-field class="example-full-width">
+      <mat-label>Busqueda de facultades</mat-label>
+      <input [formControl]="control"   matInput placeholder="Ex. Ingenieria" value="">
+    </mat-form-field>
+    <ul>
+
+    </ul>
+  </form>
+
+</div>
