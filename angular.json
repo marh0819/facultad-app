@@ -159,6 +159,7 @@
           "configurations": {
             "production": {
               "browserTarget": "create-facultad:build:production"
+
             },
             "development": {
               "browserTarget": "create-facultad:build:development"
